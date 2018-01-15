@@ -1,0 +1,70 @@
+<!doctype HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>RA18 example 160x600</title>
+    <meta name="description" content="RA18 example 160x600">
+    <meta name="author" content="Antidote London">
+    <meta name="ad.size" content="width=160,height=600">
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: grey;
+      }
+      div#container {
+        position: relative;
+        height: 600px;
+        width: 160px;
+        margin: 0 auto;
+        background: #ffffff;
+        overflow: hidden;
+      }
+      div.scene {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 600px;
+        width: 160px;
+      }
+      #logo {
+        background-image: url('ra18_logo.png');
+        z-index: 99;
+      }
+      #scene1 {
+        width: 426px;
+        background-image: url('ra18_scene1.jpg');
+      }
+      #scene2 {
+        background-image: url('ra18_endframe.jpg');
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <a href="#DUMMYLINK" title="#DUMMYLINK">
+        <div class="scene" id="logo"></div>
+        <div class="scene" id="scene1"></div>
+        <div class="scene" id="scene2"></div>
+      </a>
+    </div>
+    <script src="TweenLite.min.js"></script>
+    <script src="TimelineMax.min.js"></script>
+    <script src="CSSPlugin.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        var first = document.getElementById('scene1');
+        var second = document.getElementById('scene2');
+        var tl = new TimelineMax({
+          repeat: 3,
+          repeatDelay: 5
+        });
+        tl.add(TweenLite.to(first, 10, { left: '-265px' }) );
+        tl.add(TweenLite.to(second, 1, { opacity: 1 }) );
+      })();
+    </script>
+  </body>
+</html>

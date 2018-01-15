@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "title": "RA18 example 160x600",
+  "width": "160",
+  "height": "600",
+  "clicktags": {
+    "clickTAG": "https://www.test.com",
+    "clickTAG2": "http://www.adform.com"
+  },
+  "source": "index.html"
+}
